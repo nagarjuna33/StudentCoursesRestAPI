@@ -5,7 +5,8 @@ pool:
 
 name: practice
 appendCommitMessageToRunName: yes
-trigger: master
+trigger: 
+  - master
 parameters:
   - name: testpermaneter 
     displayName: testpermaneter 
@@ -17,7 +18,7 @@ parameters:
 steps:
   - task: Docker@2
     inputs:
-    command: 'build'
-    buildContext: .
-    repository: testpractice
-    tags: '$(Build.BuildId)'
+      command: 'build'
+      buildContext: .
+      repository: testpractice
+      tags: '$(Build.BuildId)'
